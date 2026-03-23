@@ -26,6 +26,16 @@ if st.button("ℹ️ ¿Por qué limitamos la flecha?"):
 # --- PASO 2: TIPO DE APOYO ---
 st.divider()
 st.header("Paso 2: Tipo de Apoyo")
+
+if st.button("ℹ️ ¿Qué tipo de apoyo consideramos?"):
+    st.markdown("""**Apoyo vs Empotramiento**
+    La distinción entre apoyo y empotramiento en un pórtico de hormigón depende de la rigidez relativa entre ambos: 
+    se considera un empotramiento cuando la sección del pilar es lo suficientemente grande frente al canto de la viga para impedir el giro del nudo, 
+    permitiendo que el pilar "absorba" los momentos flectores de la viga. 
+    Por el contrario, si el canto de la viga es muy grande en relación con una sección de pilar reducida, el pilar no tiene capacidad para restringir la rotación de la viga y el nudo se comporta como un apoyo, ya que el pilar simplemente girará junto con el extremo de la viga sin oponer resistencia significativa. 
+    En la práctica, esto se traduce en que un pilar robusto "sujeta" la viga (empotramiento), mientras que un pilar esbelto solo la "sostiene" (apoyo).
+    Para una viga biapoyada se suele predimensionar un canto L/14 y para una viga biempotrada L/22.""")
+    
 h_max = L / 14
 h_min = L / 22
 st.write(f"Rango de canto estimado: **{h_min:.2f} m** (rígido) a **{h_max:.2f} m** (flexible)")
