@@ -10,14 +10,18 @@ st.write("Herramienta educativa para el cálculo de vigas de hormigón armado.")
 # --- PASO 1: DATOS GEOMÉTRICOS ---
 st.header("Paso 1: Datos Geométricos")
 L = st.number_input("Longitud de la viga L (m)", min_value=1.0, value=5.0, step=0.1)
-b = st.number_input("Ancho de la viga / pilar b (m)", min_value=0.2, value=0.3, step=0.05)
-
+b = st.number_input("Ancho de la viga b (m)", min_value=0.2, value=0.3, step=0.05)
+if st.button ("ℹ️ ¿Que ancho de viga consideramos?"):
+    st.markdown("""Se suele elegir un ancho de viga igual a la dimensión del pilar al que entrega. """)
+    
 f_lim = (L * 100) / 500
 st.info(f"Flecha máxima permitida ($f < L/500$): **{f_lim:.2f} cm**")
 
 if st.button("ℹ️ ¿Por qué limitamos la flecha?"):
     st.markdown("""**ELU vs ELS**: El dimensionado por flecha es un Estado Límite de Servicio (ELS). 
-    Protege la funcionalidad y la estética. Una viga que se comba en exceso puede agrietar tabiques o causar inseguridad visual.""")
+    Estado límite último ELU se enfoca en al seguridad y la prevención del colapso o rotura bajo cargas extremas. 
+    Estado límite de servicio ELS asegura que la estructura sea funcional durante su uso normal, limitando aspectos como vibraciones, flecha o fisuración
+    ELS por flecha: Protege la funcionalidad y la estética. Una viga que se comba en exceso puede agrietar tabiques o causar inseguridad visual.""")
 
 # --- PASO 2: TIPO DE APOYO ---
 st.divider()
