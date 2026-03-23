@@ -40,8 +40,19 @@ h_max = L / 14
 h_min = L / 22
 st.write(f"Rango de canto estimado: **{h_min:.2f} m** (rígido) a **{h_max:.2f} m** (flexible)")
 
+# 1. Diccionario con las opciones y las rutas de las imágenes
+opciones_con_imagenes = {
+    "Biapoyada": "https://github.com/Tanit-9/tanit-predimensionamiento-vigas/blob/main/viga_biapoyada.png",
+    " Biempotrada": "https://github.com/Tanit-9/tanit-predimensionamiento-vigas/blob/main/viga_biempotrada.png",
+    "Apoyo-Empotramiento": " https://github.com/Tanit-9/tanit-predimensionamiento-vigas/blob/main/viga_mixta.png",
+    "Voladizo": "https://github.com/Tanit-9/tanit-predimensionamiento-vigas/blob/main/viga_voladizo.png",
+    "Continua": "https://github.com/Tanit-9/tanit-predimensionamiento-vigas/blob/main/porticos_redistribucion.png",
+}
+
 tipo_viga = st.selectbox("Selecciona el modelo estático:", 
-    ["Biapoyada", "Biempotrada", "Apoyo-Empotramiento", "Voladizo", "Continua"])
+    options=list(opciones_con_imagenes.keys()))
+st.write(f"**{tipo_viga}**")
+st.image(opciones_con_imagenes[tipo_viga], use_container_width=True)
 
 # Diccionario de coeficientes para Momento e Inercia (simplificado para el ejemplo)
 coefs = {
